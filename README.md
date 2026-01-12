@@ -45,14 +45,20 @@ https://cdn.yourdomain.com/combine/...
 #### Example
 **Original**:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- CSS (Recommended) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+
+<!-- JS (SVG) -->
+<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/js/all.min.js"></script>
 ```
 
 **Your Proxy**:
 ```html
-<script src="https://cdn.yourdomain.com/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<!-- CSS (Recommended) -->
 <link rel="stylesheet" href="https://cdn.yourdomain.com/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+
+<!-- JS (SVG) -->
+<script src="https://cdn.yourdomain.com/npm/@fortawesome/fontawesome-free@7.1.0/js/all.min.js"></script>
 ```
 
 ## 🔒 Security
@@ -110,14 +116,20 @@ https://cdn.yourdomain.com/combine/...
 #### 示例
 **原始引用**:
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<!-- 方式 1: CSS (推荐) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+
+<!-- 方式 2: JS (SVG) -->
+<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/js/all.min.js"></script>
 ```
 
 **使用私有代理**:
 ```html
-<link rel="stylesheet" href="https://cdn.yourdomain.com/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<!-- 方式 1: CSS (推荐) -->
 <link rel="stylesheet" href="https://cdn.yourdomain.com/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+
+<!-- 方式 2: JS (SVG) -->
+<script src="https://cdn.yourdomain.com/npm/@fortawesome/fontawesome-free@7.1.0/js/all.min.js"></script>
 ```
 
 ## 🔒 安全说明
