@@ -1,0 +1,31 @@
+export default {
+  async fetch(request) {
+    const url = new URL(request.url)
+
+    // Restrict paths to prevent abuse
+    const allowedPrefixes = ["/npm/", "/gh/", "/combine/"]
+    if (!allowedPrefixes.some(p => url.pathname.startsWith(p))) {
+      return new Response("Not Allowed", { status: 403 })
+    }
+
+    const target = "https://cdn.jsdelivr.net" + url.pathname + url.search
+
+    const resp = await fetch(target, {
+      cf: {
+        cacheEverything: true,
+        cacheTtl: 31536000
+      },
+      headers: {
+        "User-Agent": "CF-jsDelivr-CDN"
+      }
+    })
+
+    const newResp = new Response(resp.body, resp)
+    newResp.headers.set(
+      "Cache-Control",
+      "public, max-age=31536000, immutable"
+    )
+
+    return newResp
+  }
+}
