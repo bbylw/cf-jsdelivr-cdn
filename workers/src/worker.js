@@ -21,10 +21,15 @@ export default {
     })
 
     const newResp = new Response(resp.body, resp)
-    newResp.headers.set(
-      "Cache-Control",
-      "public, max-age=31536000, immutable"
-    )
+
+    if (resp.status === 200) {
+      newResp.headers.set(
+        "Cache-Control",
+        "public, max-age=31536000, immutable"
+      )
+    } else {
+      newResp.headers.set("Cache-Control", "public, max-age=600")
+    }
 
     return newResp
   }
